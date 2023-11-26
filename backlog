@@ -1,0 +1,4 @@
+FrontEnd: Revisar que en pantallas grandes no quede mal
+
+BackEnd:    Agregar que la cancion al terminar reproduzca una recomendada
+            Agregar que el redirect uri sea el link de ngrok
