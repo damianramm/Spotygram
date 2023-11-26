@@ -37,7 +37,7 @@ def callback():
     sp_oauth = SpotifyOAuth(
         client_id=credenciales['SPOTIPY_CLIENT_ID'],
         client_secret=credenciales['SPOTIPY_CLIENT_SECRET'],
-        redirect_uri="https://261a-2800-a4-29ec-8700-9439-3809-e33d-2346.ngrok-free.app/callback",
+        redirect_uri="https://20b0-2800-a4-28b9-7c00-9439-3809-e33d-2346.ngrok-free.app/callback",
         scope='user-modify-playback-state user-read-playback-state user-library-modify user-library-read user-read-recently-played'
     )
     try:
