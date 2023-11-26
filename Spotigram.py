@@ -12,12 +12,15 @@ with open('credenciales.json') as f:
     credenciales = json.load(f)
 
 # Configurar autenticación de Spotify
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+sp_auth = SpotifyOAuth(
     client_id=credenciales['SPOTIPY_CLIENT_ID'],
     client_secret=credenciales['SPOTIPY_CLIENT_SECRET'],
-    redirect_uri=credenciales['SPOTIPY_REDIRECT_URI'],
+    redirect_uri="https://261a-2800-a4-29ec-8700-9439-3809-e33d-2346.ngrok-free.app/callback",
     scope='user-modify-playback-state user-read-playback-state user-library-modify user-library-read user-read-recently-played'
-))
+)
+auth_url = sp_auth.get_authorize_url()
+# Crear una instancia de Spotipy para realizar búsquedas
+sp = spotipy.Spotify(auth_manager=sp_auth)
 
 # Configurar token del bot de Telegram
 TELEGRAM_BOT_TOKEN = credenciales['TELEGRAM_BOT_TOKEN']
